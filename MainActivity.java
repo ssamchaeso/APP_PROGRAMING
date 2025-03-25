@@ -1,29 +1,19 @@
-package com.example.appprograming1;
+package com.example.dice;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
+import java.util.Random;
 public class MainActivity extends AppCompatActivity {
-    private EditText idText;
-    private EditText passwordText;
-    private EditText phoneText;
-    private Button button;
+    private ImageView imageView;
 
-    private TextView idTextView;
-
-    private TextView passwordTextView;
-    private TextView phoneTextView;
-
-
+    private Random random= new Random();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,26 +24,63 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        idText = (EditText) findViewById(R.id.editTextId);
-        passwordText = (EditText) findViewById(R.id.editTextTextPassword);
-        phoneText = (EditText) findViewById(R.id.editTextPhone);
 
-        button = (Button) findViewById(R.id.button);
+    imageView=findViewById(R.id.Dice1);
+    imageView=findViewById(R.id.Dice2);
+    }public void RollDice(View view){
+        int DIceNumber=random.nextInt(5)+1;
+        int DiceNumber2=random.nextInt(5)+1;
+        if(DIceNumber == 1){
+           imageView.setImageResource(R.drawable.one);
+           imageView=findViewById(R.id.Dice1);
+        }
+        if(DIceNumber==2){
+            imageView.setImageResource(R.drawable.two);
+            imageView=findViewById(R.id.Dice1);
+        }
+        if(DIceNumber==3){
+            imageView.setImageResource(R.drawable.three);
+            imageView=findViewById(R.id.Dice1);
+        }
+        if(DIceNumber==4){
+            imageView.setImageResource(R.drawable.four);
+            imageView=findViewById(R.id.Dice1);
+        }
+        if(DIceNumber==5){
+            imageView.setImageResource(R.drawable.five);
+            imageView=findViewById(R.id.Dice1);
+        }
+        if(DIceNumber==6){
+            imageView.setImageResource(R.drawable.six);
+            imageView=findViewById(R.id.Dice1);
+        }
+        //////////////////////////////
 
-        idTextView = (TextView) findViewById(R.id.textView);
-        passwordTextView = (TextView) findViewById(R.id.textView2);
-        phoneTextView = (TextView) findViewById(R.id.textView3);
+        if(DiceNumber2 == 1){
+            imageView.setImageResource(R.drawable.one);
+            imageView=findViewById(R.id.Dice2);
+        }
+        if(DiceNumber2==2){
+            imageView.setImageResource(R.drawable.two);
+            imageView=findViewById(R.id.Dice2);
+        }
+        if(DiceNumber2==3){
+            imageView.setImageResource(R.drawable.three);
+            imageView=findViewById(R.id.Dice2);
+        }
+        if(DiceNumber2==4){
+            imageView.setImageResource(R.drawable.four);
+            imageView=findViewById(R.id.Dice2);
+        }
+        if(DiceNumber2==5){
+            imageView.setImageResource(R.drawable.five);
+            imageView=findViewById(R.id.Dice2);
+        }
+        if(DiceNumber2==6){
+            imageView.setImageResource(R.drawable.six);
+            imageView=findViewById(R.id.Dice2);
+        }
 
-    }
 
-    public void onClicked(View view) {
-        String id = idText.getText().toString();
-        idTextView.setText("아이디:  "+id);
-
-        String password = passwordText.getText().toString();
-        passwordTextView.setText("패스워드:  "+password);
-
-        String phone = phoneText.getText().toString();
-        phoneTextView.setText("전화번호:  "+phone);
     }
 }

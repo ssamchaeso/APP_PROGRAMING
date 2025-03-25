@@ -7,60 +7,45 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="202dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="146dp"
+        android:layout_marginBottom="21dp"
+        android:onClick="RollDice"
+        android:text="ROLL"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
-        android:layout_width="362dp"
-        android:layout_height="547dp"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="16dp">
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="30dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button">
 
-        <EditText
-            android:id="@+id/editTextId"
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/Dice1"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="text"
-            android:hint="ID를 입력하세요" />
+            android:layout_weight="1"
+            tools:srcCompat="@drawable/one" />
 
-        <EditText
-            android:id="@+id/editTextTextPassword"
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/Dice2"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Password를 입력하세요"
-            android:inputType="textPassword" />
-
-        <EditText
-            android:id="@+id/editTextPhone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="phone"
-            android:hint="PHONENUMBER를 입력하세요"/>
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="118dp"
-            android:layout_height="wrap_content"
-            android:onClick="onClicked"
-            android:text="Button" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="ID" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Password" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Phone Number" />
+            android:layout_weight="1"
+            tools:srcCompat="@drawable/one" />
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
